@@ -28,8 +28,9 @@ class ReadEmail(TestCase):
 
     def test_data_envio_email(self):
 
-        data = 'sexta-feira, 27 de outubro de 2006 09:57'
+        self.assertEqual(get_data_envio('sexta-feira, 27 de outubro de 2006 09:57'), '27/10/2006 09:57')
+        self.assertEqual(get_data_envio('terça-feira, 11 de dezembro de 2007 12:00'), '11/12/2007 12:00')
+        self.assertEqual(get_data_envio('quinta-feira, 13 de dezembro de 2007 17:45'), '13/12/2007 17:45')
 
-        self.assertEqual(get_data_envio(data), '27/06/2019 09:57:00')
 
 
